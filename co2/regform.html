@@ -1,0 +1,84 @@
+<html>  
+<head>  
+<title> FORM </title>  
+</head>
+<body>
+ <h1 align='center'><i><u> REGISTERATION FORM</u></i></h1><br>
+<form onsubmit="return check();">
+<table border="1" align="center" >
+<tr>
+<td>User-id:</td>
+<td><input type="text" id="id" name="name" placeholder="Enter user id" required>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type="Password" id="pswd" name="pswd" placeholder="Enter your password here" required>
+</tr>
+<td> Name:</td>
+<td><input type="text" id="name" name="name" placeholder="Enter your name here">
+</tr>
+<tr>
+<td>Address:</td>
+<td><textarea rows="5" cols="50" name="Description" id="add"></textarea></td>
+</tr>
+<tr>
+<td>Country:</td>
+<td><select name="country" id="c">
+  <option value="India">India</option>
+  <option value="China">China</option>
+  <option value="Australia">Australia</option>
+  <option value="Nepal">Nepal</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Zip Code</td>
+<td><input type="text" id="zip"name="t8" placeholder="Enter your pin code " required>
+</tr>
+<tr><td>E-mail :</td><td><input type="email" name="t9" required></td></tr>
+<tr><td>Gender :</td><td><input type="radio"name="t4"value="male" />Male<input type="radio"name="t4"value="female" />Female </td></tr>
+<tr><td>Language:</td><td><input type="radio"name="t5"value="eng" />English<input type="radio"name="t5"value="noneng" />Non-English </td></tr>
+<tr><td>About:</td>
+<td><textarea rows="5" cols="50" name="Des" id="ab"></textarea></td></tr>
+<tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" style="width: 150px;height: 40px;" name="btnsave" value="SUBMIT">
+                         
+                    </td>
+                </tr>
+</table>
+</form>
+<script type="text/javascript">
+var letters=/^[a-z A-Z]+$/;
+var numbers=/^[0-9]+$/;
+var em=/^[[a-z A-Z]+$/[0-9]+$/+/[@_.+]+$/;
+function check()
+{
+	if(!document.getElementById("name").value.match(letters))
+	{
+		alert("please input letters only for userid");
+		return false;
+	}
+	else if(!document.getElementById("pswd").value.match(numbers))
+	{
+		alert("please input numbers only for password");
+		return false;
+	}
+	else if(!document.getElementById("t8").value.match(numbers))
+	{
+		alert("please input digits only for zipcode");
+		return false;
+	}
+	else if(!document.getElementById("t9").value.match(em))
+	{
+		alert("please input alphanumerics only for email");
+		return false;
+	}
+	
+	else{
+		return true;
+	}
+}
+	</script>
+</body>
+</html>
